@@ -162,28 +162,31 @@ const Services = () => {
         <div className="container mx-auto px-4 lg:px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service) => (
-              <Card key={service.id} className="hover:shadow-lg transition-shadow cursor-pointer">
-                <CardHeader>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
-                  <CardDescription className="text-base">
-                    {service.shortDescription}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Button 
-                    asChild 
-                    className="w-full"
-                  >
-                    <Link to={`/services/${service.id === 'geological' ? 'geological-services' : 
-                                     service.id === 'environmental' ? 'environmental-services' :
-                                     service.id === 'oceanography' ? 'oceanography-marine' :
-                                     service.id === 'geochemical' ? 'geochemical-services' :
-                                     'new-ventures-asset-mgt'}`}>
-                      Learn More
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
+              <Link 
+                key={service.id}
+                to={`/services/${service.id === 'geological' ? 'geological-services' : 
+                               service.id === 'environmental' ? 'environmental-services' :
+                               service.id === 'oceanography' ? 'oceanography-marine' :
+                               service.id === 'geochemical' ? 'geochemical-services' :
+                               'new-ventures-asset-mgt'}`}
+                className="group"
+              >
+                <Card className="hover:shadow-lg transition-all duration-300 cursor-pointer h-full group-hover:border-primary/20">
+                  <CardHeader>
+                    <CardTitle className="text-xl group-hover:text-primary transition-colors">
+                      {service.title}
+                    </CardTitle>
+                    <CardDescription className="text-base">
+                      {service.shortDescription}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="text-primary font-medium group-hover:underline">
+                      Learn More →
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
