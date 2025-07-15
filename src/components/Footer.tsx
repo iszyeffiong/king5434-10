@@ -4,9 +4,9 @@ const Footer = () => {
   return (
     <footer className="bg-foreground text-background">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid lg:grid-cols-4 gap-8">
+        <div className="grid lg:grid-cols-2 gap-8">
           {/* Company Info */}
-          <div className="lg:col-span-2">
+          <div>
             <h3 className="text-xl font-bold mb-4">Geoterrain NIGERIA LIMITED</h3>
             <div className="space-y-3">
               <div className="flex items-start gap-3">
@@ -41,19 +41,12 @@ const Footer = () => {
           {/* Quick Links */}
           <div>
             <h4 className="font-bold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-sm mb-6">
               <li><a href="#" className="hover:text-primary transition-colors">Home</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Who we are</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Projects</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Contact Us</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Career</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Services Overview</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Partnership</a></li>
             </ul>
-          </div>
-
-          {/* Connect */}
-          <div>
+            
             <h4 className="font-bold mb-4">Connect With Us</h4>
             <a 
               href="https://www.linkedin.com/company/geoterrain-nigeria-limited/mycompany/"
