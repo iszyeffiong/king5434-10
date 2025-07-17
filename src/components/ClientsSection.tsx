@@ -1,12 +1,11 @@
 const ClientsSection = () => {
   const clients = [
-    "Shell",
-    "Chevron", 
-    "NNPC",
-    "HYPREP",
-    "Addax",
-    "First EP",
-    "Engaged"
+    { name: "", logo: "https://i.ibb.co/gL567tyy/image.png " },
+    { name: "", logo: "https://i.ibb.co/qGJcYK3/unnamed-18.jpg" },
+    { name: "", logo: "https://i.ibb.co/cK8KQ4ds/unnamed-21.jpg" },
+    { name: "", logo: "https://i.ibb.co/2YMmPyrr/unnamed-23.jpg" },
+    { name: "", logo: "https://i.ibb.co/DfzSDWG1/unnamed-24.jpg" },
+    { name: "", logo: "https://i.ibb.co/SX33fHKS/unnamed-7.png" }
   ];
 
   return (
@@ -17,15 +16,17 @@ const ClientsSection = () => {
           <div className="w-24 h-1 bg-primary mx-auto"></div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 items-center justify-items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 justify-center">
           {clients.map((client, index) => (
             <div 
               key={index}
-              className="bg-card p-4 rounded-lg shadow-sm border hover:shadow-md transition-shadow w-full h-20 flex items-center justify-center"
+              className="bg-card p-4 rounded-lg shadow-sm border hover:shadow-md transition-shadow w-[120px] h-20 flex items-center justify-center"
             >
-              <span className="text-muted-foreground font-semibold text-sm text-center">
-                {client}
-              </span>
+              <img 
+                src={client.logo.trim()} 
+                alt={client.name || `Client ${index + 1}`} 
+                className="h-12 mx-auto object-contain"
+              />
             </div>
           ))}
         </div>
