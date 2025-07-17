@@ -10,21 +10,9 @@ const GeochemicalServices = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const services = [
-    {
-      name: "Petroleum Geochemistry",
-      description: "Comprehensive petroleum geochemical analysis including source rock evaluation, oil-oil correlations, and thermal maturity assessment. Our laboratory services provide critical data for exploration success.",
-      image: "https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=400&h=300"
-    },
-    {
-      name: "Environmental Geochemistry",
-      description: "Geochemical analysis for environmental contamination assessment, remediation monitoring, and regulatory compliance. We provide accurate and reliable analytical results for environmental management.",
-      image: "https://images.unsplash.com/photo-1582719471137-c3967ffb1c42?w=400&h=300"
-    },
-    {
-      name: "Mineral Geochemistry",
-      description: "Geochemical exploration and analysis for mineral resource evaluation including rare earth elements and precious metals. Our services support mining and exploration companies worldwide.",
-      image: "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=400&h=300"
-    }
+   
+ 
+
   ];
 
   const gallery = [
@@ -72,12 +60,37 @@ const GeochemicalServices = () => {
             <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
               Geochemical Services
             </h1>
-            <p className="text-xl text-muted-foreground mb-8">
-              Advanced Geochemical Analysis
-            </p>
+          
+            <h4 className="text-4xl lg:text-3xl font-bold text-foreground mb-6">
+              High Quality Geochemical Solutions
+            </h4>
+                  
             <p className="text-lg text-muted-foreground">
-              State-of-the-art geochemical analysis and interpretation services for petroleum exploration, environmental monitoring, and mineral resource evaluation.
-            </p>
+              Geoterrain provides geochemical solutions that helps to evaluate the hydrocarbon potential of our client’s oil wells as part of its exploration and delineation activities. The main objective of this service is to investigate the richness and state the maturity of the hydrocarbon source rocks of our client wells. This, undoubtedly, will provide our clients with improved decision tools and enhance the robustness of their portfolio.
+
+            </p> <br />
+             <p className="text-lg text-muted-foreground">
+              Based on our experiences, availability of cutting-edge technology and techniques, seasoned Partners and in-depth knowledge base from similar geochemical services or study works that we have successfully carried out within the Niger Delta Basin, we provide independent expertise in geochemical consulting services that satisfies E&P need for oil and gas and mineral exploration industries. In conjunction with our partners, we specialize in providing a sound and applicable geochemical data processing and interpretation that add value through reduced drilling risk, increased chance of success and cost effective management. We are well positioned to carry out various geochemical services which include:
+            <li>Total organic carbon determination </li>
+            <li>Determination of source rock properties by Rock-Eval pyrolysis </li>
+            <li>Optical examination of organic matter </li>
+            <li>Vitrinite reflectance analysis  </li>
+            <li>Kerogen description analysis </li>
+            </p> <br />
+              <img 
+                      src="https://i.ibb.co/Kp4t6jdw/Whats-App-Image-2025-07-16-at-23-42-23-8088a3dc.jpg" 
+                      alt="Example from the web" 
+                      style={{ width: '800px', height: 'auto' }} 
+                    /> <br />
+
+            <p className="text-lg text-muted-foreground">
+              We provide independent expertise in geochemical consulting services that satisfy E&P needs for oil and gas and mineral exploration industries. In conjunction with our partners, we specialize in providing sound and applicable geochemical data processing and interpretation that add value through reduced drilling risk, increased chance of success, and cost-effective management. We are well-positioned to carry out various geochemical services which include
+            <li>Total organic carbon determination </li>
+            <li>Determination of source rock properties by Rock-Eval pyrolysis </li>
+            <li>Optical examination of organic matter  </li>
+            <li>Vitrinite reflectance analysis and </li>
+            <li>Kerogen description analysis</li>
+            </p> 
           </div>
         </div>
       </section>
@@ -105,78 +118,8 @@ const GeochemicalServices = () => {
             ))}
           </div>
 
-          {/* Gallery Section */}
-          <Card className="p-8">
-            <h2 className="text-3xl font-bold text-center mb-8">Project Gallery</h2>
-            <div className="relative max-w-4xl mx-auto">
-              <div className="aspect-video rounded-lg overflow-hidden mb-6">
-                <img
-                  src={gallery[currentImageIndex].image}
-                  alt={gallery[currentImageIndex].title}
-                  className="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
-                  onClick={() => goToImage((currentImageIndex + 1) % gallery.length)}
-                />
-              </div>
-              
-              <div className="flex items-center justify-between mb-6">
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={prevImage}
-                  className="rounded-full"
-                >
-                  <ChevronLeft className="w-4 h-4" />
-                </Button>
-                
-                <div className="text-center">
-                  <p className="font-medium text-lg">{gallery[currentImageIndex].title}</p>
-                  <p className="text-sm text-muted-foreground">
-                    {currentImageIndex + 1} of {gallery.length}
-                  </p>
-                </div>
-                
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={nextImage}
-                  className="rounded-full"
-                >
-                  <ChevronRight className="w-4 h-4" />
-                </Button>
-              </div>
-              
-              <div className="flex justify-center gap-2 mb-8">
-                {gallery.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => goToImage(idx)}
-                    className={`w-3 h-3 rounded-full transition-colors hover:scale-110 ${
-                      idx === currentImageIndex ? 'bg-primary' : 'bg-muted hover:bg-muted-foreground/50'
-                    }`}
-                  />
-                ))}
-              </div>
-
-              {/* Thumbnail Grid */}
-              <div className="grid grid-cols-3 md:grid-cols-6 gap-2">
-                {gallery.map((item, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => goToImage(idx)}
-                    className={`aspect-video rounded-lg overflow-hidden border-2 transition-all ${
-                      idx === currentImageIndex ? 'border-primary' : 'border-transparent hover:border-muted-foreground'
-                    }`}
-                  >
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </button>
-                ))}
-              </div>
-            </div>
-          </Card>
+       
+          
 
           {/* CTA Section */}
           <div className="text-center mt-16">

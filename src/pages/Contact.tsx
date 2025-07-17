@@ -62,19 +62,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email Us",
-      details: ["info@geoterrainnigeria.com", "projects@geoterrainnigeria.com"],
-      action: "mailto:info@geoterrainnigeria.com"
+      details: ["supportgroup@geoterrainltd.com",],
+      action: "mailto:supportgroup@geoterrainltd.com"
     },
     {
       icon: Phone,
       title: "Call Us",
-      details: ["+234 803 123 4567", "+234 805 987 6543"],
-      action: "tel:+2348031234567"
+      details: ["+234-8175250107", ],
+      action: "tel:+2348175250107"
     },
     {
       icon: MapPin,
       title: "Visit Us",
-      details: ["15 Ademola Adetokunbo Street", "Victoria Island, Lagos, Nigeria"],
+      details: ["1A Dele Adeyemi Street, Agungi East Estate", "Lekki, Lagos State, Nigeria"],
       action: "https://maps.google.com"
     },
     {
@@ -250,7 +250,7 @@ const Contact = () => {
               {/* Google Maps Placeholder */}
               <Card>
                 <CardHeader>
-                  <CardTitle>Find Our Office</CardTitle>
+                  <CardTitle>Find Our Headquarters</CardTitle>
                   <CardDescription>
                     Visit our headquarters in the heart of Lagos, Nigeria
                   </CardDescription>
@@ -273,9 +273,17 @@ const Contact = () => {
                       <MapPin className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                       <div>
                         <p className="font-medium">GeoTerrain Nigeria Limited</p>
+                        <br />
+                        <p className="font-medium">Lagos Office</p>
                         <p className="text-sm text-muted-foreground">
-                          15 Ademola Adetokunbo Street<br />
-                          Victoria Island, Lagos 101241<br />
+                          1A, Dele Adeyemi Street, Agungi East Estate<br />
+                          Lekki, Lagos State, <br />
+                          Nigeria
+                        </p> <br />
+                        <p className="font-medium">Port Harcourt Office</p>
+                        <p className="text-sm text-muted-foreground">
+                          1A, Dele Adeyemi Street, Agungi East Estate<br />
+                          Lekki, Lagos State, <br />
                           Nigeria
                         </p>
                       </div>
@@ -283,7 +291,7 @@ const Contact = () => {
                     <Button variant="outline" className="w-full" asChild>
                       <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer">
                         <MapPin className="w-4 h-4 mr-2" />
-                        Get Directions
+                        Get Directions to Lagos Office
                       </a>
                     </Button>
                   </div>
@@ -291,31 +299,7 @@ const Contact = () => {
               </Card>
 
               {/* Additional Office Information */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>Office Information</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div>
-                    <h4 className="font-medium mb-2">Parking</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Free parking available on-site for visitors
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-medium mb-2">Public Transport</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Accessible by BRT and taxi services. Near Victoria Island Bus Terminal.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-medium mb-2">Emergency Contact</h4>
-                    <p className="text-sm text-muted-foreground">
-                      24/7 Emergency Line: +234 800 123 4567
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
+             
             </div>
           </div>
         </div>

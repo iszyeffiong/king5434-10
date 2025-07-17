@@ -11,30 +11,36 @@ const NewVenturesAssetMgt = () => {
 
   const services = [
     {
-      name: "Venture Opportunity Assessment",
-      description: "Comprehensive evaluation of new venture opportunities including technical, commercial, and risk assessments. Our team provides strategic insights for successful venture development and investment decisions.",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300"
+      name: "New Ventures, Engineering Projects, and Asset Management",
+      description: "Geoterrain provides engineering project management from project initiation through execution to closure, and advisory services including pipeline survey, crude and gas handling, field development planning, and other engineering support services. Consequently, the clients are assured of receiving the highest quality, most cost-effective solutions to meet their program objectives. Key services include: Pipeline survey and construction | Gas processing plant and | Bitumen exploitation.",
+      image: "https://i.ibb.co/tM1b5tqv/takr.png"
     },
     {
-      name: "Asset Performance Optimization",
-      description: "Strategic asset management and optimization services to maximize value and extend field life. We implement advanced technologies and methodologies for enhanced asset performance.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300"
+      name: "Enhanced Management Training",
+      description: "Geoterrain provides specialist training for the company in response to increasing demand from Exploration and Production Asset Teams, resulting from the need for the continued successful expansion of your company. Our training programme is extended to understanding the following concepts: Sequence Stratigraphic | Environmental Site Assessment (Tier 1 and Tier 2) | Tier 2 Modelling using the Risk-Based Corrective Action (RBCA) | Oil Spill Clean-up and Remediation | Oceanographic Management",
+      image: "https://i.ibb.co/d023wR7N/unnamed-20.jpg"
     },
     {
+      name: "Provision of Core Boxes for Coring Program",
+      description: "We at Geoterrain, with our partners, supply new storage core boxes with a lid made of sturdy, yet light weight plastic materials that are durable, much lighter and easy to carry, heat resistant, easy to stack, with no snags or damage that could be caused by metal wires. It is also reusable to fit your needs. This core box provides stable stacking and can withstand the weight of several boxes full of cores stacked on its top. Since it is made of plastic material, it will hold up under freezing conditions and has a UV inhibitor to withstand sunlight. It provides the best protection and is easy to transport. Our coring, handling, and preservation programme are conducted in a manner that prevents both losses of interstitial fluids and contamination with foreign fluids.",
+      image: "https://i.ibb.co/3ywrVQrz/image.jpg"
+    },
+     {
       name: "Portfolio Management",
-      description: "Portfolio optimization strategies including asset rationalization, divestment support, and acquisition due diligence. Our services help maximize portfolio value and reduce operational risks.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300"
+      description: "We own a couple of non–intrusive geophysical survey, remediation, environmental studies sampling, and monitoring equipment which are available for lease. The equipment includes but not limited to: 20 Foot Site office / Caravan | ABEM Terrameter LS 2 | Delta Epsilon Wireline Logging Machine| MALA RAMAC Ground Penetrating Radar (GPR) equipment with 100MHz, 250MHz, and 500MHz. |Geotech oil and water level interface meter with 50m reel and padded carrying case. | Hands-held digital Garmin Global Positioning System (GPS 72) and Getac digital cameras| Soil sampling tools for soil collection | Surface water pump for borehole purging  | Groundwater bailer for collection of water samples and purging of monitoring boreholes",
+      image: "https://i.ibb.co/5XKN3JnW/unnamed-19.jpg"
     }
   ];
 
-  const gallery = [
-    { title: "Strategic Planning", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600" },
-    { title: "Asset Evaluation", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600" },
-    { title: "Project Management", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600" },
-    { title: "Financial Analysis", image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800&h=600" },
-    { title: "Business Development", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600" },
-    { title: "Investment Planning", image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600" }
+    const gallery = [
+    { title: "Provision of Core Boxes for Coring Program", image: "https://i.ibb.co/3ywrVQrz/image.jpg" },
+    { title: "Portfolio Management", image: "https://i.ibb.co/5XKN3JnW/unnamed-19.jpg" },
+    { title: "Enhanced Management Training", image: "https://i.ibb.co/d023wR7N/unnamed-20.jpg" },
+    { title: "New Ventures, Engineering Projects, and Asset Management", image: "https://i.ibb.co/tM1b5tqv/takr.png" },
+    { title: "", image: "https://i.ibb.co/KkCjzwB/unnamed-17.jpg" },
+    { title: "", image: "" }
   ];
+
 
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % gallery.length);

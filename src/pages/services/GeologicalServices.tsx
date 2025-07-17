@@ -12,28 +12,46 @@ const GeologicalServices = () => {
   const services = [
     {
       name: "Acreage Evaluation for Licensing Rounds",
-      description: "Comprehensive assessment of petroleum acreage for licensing opportunities, including structural analysis, play concept evaluation, and risk assessment. Our team provides detailed technical reports and recommendations for optimal investment decisions.",
-      image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300"
+      description: "Geoterrain unrivalled geological expertise can give you the competitive edge when it comes to designing exploration programs to access new license blocks and their potential for oil and gas. We provide you with a unique set of tools including petroleum system evaluation, seismic interpretation, reservoir evaluation, and volumetric evaluation. In addition, our experiences in the Niger Delta basins, Nigeria, West Africa, Ghana, East Africa, Uganda and Southern Africa, Mozambique/Madagascar geological settings, position us to meet your need either locally or internationally.",
+      image: "https://i.ibb.co/q3F459kk/unnamed-39.jpg"
     },
     {
       name: "Sequence Stratigraphic Studies",
-      description: "Detailed sequence stratigraphic analysis to understand depositional environments, reservoir architecture, and hydrocarbon migration pathways. We utilize cutting-edge software and methodologies for accurate subsurface modeling.",
-      image: "https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?w=400&h=300"
+      description: " Sequence stratigraphic study promotes thorough understanding of the evolution of basins, but also allows for interpretations of potential source rocks and reservoir rocks in both frontier areas, having seismic data but limited well control and in more mature hydrocarbon provinces. Sequences tend to show cyclicity of changes in relative sea level and widespread unconformities, processes of sedimentation and sources of sediments, climate and tectonic activity over time. We help in the prediction of reservoir continuity which is currently a key question in mature hydrocarbon provinces where sequence stratigraphic is being applied.",
+      image: "https://i.ibb.co/XfxF7f49/image.png"
     },
     {
       name: "Geological Data Management and Analysis",
-      description: "State-of-the-art geological data management systems with advanced interpretation software for comprehensive subsurface analysis. Our solutions integrate seismic, well log, and core data for enhanced reservoir characterization.",
-      image: "https://images.unsplash.com/photo-1454391304352-2bf4678b1a7a?w=400&h=300"
+      description: "Geoterrain is a reputable consulting company in geological, environmental and oceanographic management that delivers excellent management solutions towards streamlining the process of collection, inventory, analysis and reporting on a daily basis. Our third party software enables easy visualization of your produced data. The software helps you conduct in-depth geological, environmental and oceanographic analyses, interpretations and modelling. We have easy access to applicable third party software that enables appropriate interpretation of your data as required.",
+      image: "https://i.ibb.co/B5rZQ51B/unnamed-6.png"
+    },
+      {
+      name: "Pore Pressure Studies",
+      description: "Knowledge of formation pore pressure is not only essential for safe and cost-effective drilling of wells, but is also critical for assessing exploration risk factors. An accurately predicted pore pressure is necessary to achieving a safe, efficient and cost effective drilling. When accurately predicted prior to drilling, the possible catastrophic incidents, such as well blowouts and mud volcanoes, lost circulation, stuck pipe, borehole instability, kick and fluid influx are avoided. Accurate estimation not only affects the safety of the drilling operation and personnel, it also affects the time and cost of drilling as well as the condition of the formation for testing and production. Rapid sedimentation rate results to under compaction of shales which is the primary overpressure generating mechanism among other secondary overpressure mechanism.",
+      image: "https://i.ibb.co/rPgpf30/image.png"
+    },
+    {
+      name: "Basin Studies, Prospect Evaluation and Modeling",
+      description: "This is a tool that assists to analyze and interpret the genetic components that makes up a receiving sedimentary basin. The identification of these genetic components that constitute the petroleum system, i.e., source rocks, reservoir rocks, seals and their associated complex trapping mechanism (stratigraphic or structural traps). Geoterrain is well positioned to assist in identification of these components and their import to refined assessment of: A robust hydrocarbon portfolio | Bypassed compartmentalized hydrocarbon reservoir unit. | Undiscovered and underdeveloped reservoirs and associated resources.",
+      image: "https://i.ibb.co/N5LZCzm/image.jpg"
+    },
+    {
+      name: "Shallow Gas Geohazard Studies",
+      description: "Site Geohazard surveys are performed to minimize the risk of harm to personnel and equipment, and to protect the natural environment. Geoterrain can assist you in conducting numerous types of Geohazard surveys and studies to identify all possible constraints and hazards from man-made, natural and geological features which may affect the operational or environmental integrity of a proposed drilling operation. We are able to ensure the most efficient use of available data, including 2D or 3D seismic data, well data, velocity data, meteorological and oceanographic surveys, bathymetry, depth sounding and cartography. The data generated can be used as a pre-impact assessment of the area.",
+      image: "https://i.ibb.co/C345W374/image.png"
     }
+    
   ];
 
   const gallery = [
-    { title: "Seismic Data Interpretation", image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&h=600" },
-    { title: "Core Sample Analysis", image: "https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?w=800&h=600" },
-    { title: "Geological Mapping", image: "https://images.unsplash.com/photo-1454391304352-2bf4678b1a7a?w=800&h=600" },
-    { title: "Laboratory Testing", image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&h=600" },
-    { title: "3D Geological Modeling", image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600" },
-    { title: "Rock Formation Analysis", image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600" }
+    { title: "Shallow Gas Geohazard Studies", image: "https://i.ibb.co/C345W374/image.png" },
+    { title: "Basin Studies, Prospect Evaluation and Modeling", image: "https://i.ibb.co/N5LZCzm/image.jpg" },
+    { title: "Pore Pressure Studies", image: "https://i.ibb.co/rPgpf30/image.png" },
+    { title: "Sequence Stratigraphic Studies", image: "https://i.ibb.co/XfxF7f49/image.png" },
+    { title: "Acreage Evaluation for Licensing Rounds", image: "https://i.ibb.co/q3F459kk/unnamed-39.jpg" },
+    { title: "Geological Data Management and Analysis", image: "https://i.ibb.co/B5rZQ51B/unnamed-6.png" },
+    { title: "", image: "https://i.ibb.co/YTV39s4H/unnamed-15.jpg" },
+    { title: "", image: "https://i.ibb.co/dJ23NFWZ/unnamed-41.jpg"},
   ];
 
   const nextImage = () => {

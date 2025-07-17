@@ -44,7 +44,7 @@ const Services = () => {
           description: "Comprehensive environmental impact assessments for oil and gas projects, including baseline studies and mitigation measures."
         },
         {
-          name: "Environmental Monitoring & Compliance",
+          name: "Environmal Monitoring & Compliance",
           description: "Continuous environmental monitoring programs and regulatory compliance services for industrial operations."
         },
         {

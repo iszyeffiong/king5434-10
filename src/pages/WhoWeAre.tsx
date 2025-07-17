@@ -83,38 +83,39 @@ const WhoWeAre = () => {
       shortDescription: "Led by experienced professionals with decades of expertise in geology, environmental science, and project management across diverse terrains and challenges.",
       fullContent: {
         ceo: {
-          name: "Dr. Adebayo Ogundimu",
-          title: "Chief Executive Officer & Lead Geologist",
+          name: "Kunle ADESIDA, PhD",
+          title: "Managing Director/CEO",
           qualifications: [
-            "Ph.D. in Petroleum Geology - University of Ibadan",
-            "M.Sc. in Applied Geophysics - Ahmadu Bello University",
-            "B.Sc. in Geology - University of Nigeria, Nsukka",
+            "Ph.D. in  Geology - University of Benin",
+            "M.Sc. in Geology - University of Ife",
+            "B.Sc. in Geology - University of Ibadan",
             "Professional Geologist (P.Geol) - Nigerian Association of Petroleum Explorationists"
           ],
-          experience: "Over 20 years of experience in petroleum exploration, environmental geology, and geotechnical investigations across West Africa. Previously held senior positions at Shell Petroleum Development Company and Chevron Nigeria Limited.",
+          experience: "Dr. Adeesida started his career with Shell Petroleum Development Company of Nigeria (SPDC) and served in different capacities as Head of - Geological Laboratory, Nigeria; Head - Northern Swamp Evaluation Team, Exploration, Nigeria. He retired. After retirement, he established Geoterrain Nigeria Limited (GtN). He is a fellow of the Nigerian Association of Petroleum Explorationists (NAPE), an honorary member of American Association of Petroleum Geologists (AAPG), active member of Nigerian Mining and Geosciences Society (NMGS) a member of Nigerian Association of Engineering Geology and Environment (NAEGE) and active member of Society of Exploration Geophysicists. He served as President, Africa Region of AAPG from 2003 - 2005 and Chairman, AAPG International from 2010 - 2014. He earned BSc, MSc and PhD in Geology and Applied Geology.; ",
           achievements: [
-            "Led successful exploration campaigns resulting in significant hydrocarbon discoveries",
-            "Published over 30 peer-reviewed papers in international geological journals",
-            "Recipient of the Nigerian Association of Petroleum Explorationists Excellence Award",
-            "Keynote speaker at major international geology conferences"
+            "Waste and Spills Management; and Business Manager",
+            "Commercial Crude and Gas Handling, Nigeria",
+            "He was on a cross-posting assignment in Holland/Scotland and the Sultanate of Brunei, Southeast Asia",
+            "Worked in Warri, Port Harcourt, and Lagos for SPDC",
+            "Spent about 29 years with Shell"
           ]
         },
         management: [
-          {
-            name: "Engr. Funmilayo Adeyemi",
-            title: "Head of Environmental Services",
-            qualification: "M.Eng. Environmental Engineering, 15 years experience"
-          },
-          {
-            name: "Dr. Chukwuma Okoro",
-            title: "Head of Geochemical Services", 
-            qualification: "Ph.D. Geochemistry, 12 years experience"
-          },
-          {
-            name: "Geol. Aisha Mahmud",
-            title: "Head of Marine & Oceanography",
-            qualification: "M.Sc. Marine Geology, 10 years experience"
-          }
+          // {
+          //   name: "Engr. Funmilayo Adeyemi",
+          //   title: "Head of Environmental Services",
+          //   qualification: "M.Eng. Environmental Engineering, 15 years experience"
+          // },
+          // {
+          //   name: "Dr. Chukwuma Okoro",
+          //   title: "Head of Geochemical Services", 
+          //   qualification: "Ph.D. Geochemistry, 12 years experience"
+          // },
+          // {
+          //   name: "Geol. Aisha Mahmud",
+          //   title: "Head of Marine & Oceanography",
+          //   qualification: "M.Sc. Marine Geology, 10 years experience"
+          // }
         ]
       }
     }

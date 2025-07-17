@@ -394,10 +394,10 @@ const Career = () => {
               Contact HR Team
             </a>
             <a 
-              href="mailto:careers@geoterrainnigeria.com" 
+              href="mailto:supportgroup@geoterrainltd.com" 
               className="inline-flex items-center justify-center rounded-md border border-input bg-background px-8 py-3 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground"
             >
-              Email: careers@geoterrainnigeria.com
+              Email: supportgroup@geoterrainltd.com
             </a>
           </div>
         </div>

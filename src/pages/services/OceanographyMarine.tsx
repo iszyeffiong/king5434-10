@@ -11,29 +11,20 @@ const OceanographyMarine = () => {
 
   const services = [
     {
-      name: "Marine Geological Surveys",
-      description: "Comprehensive marine geological surveys including bathymetric mapping, seafloor sampling, and subsurface profiling. Our advanced marine equipment provides high-resolution data for offshore projects.",
-      image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300"
+      name: "ADCP Data Acquisition",
+      description: "A good understanding of oceanographic conditions reduce uncertainty in engineering specifications, provide help in operational planning, leading to reduced costs, and enhances safety and operational efficiency. Geoterrain is in a position to provide commercial oceanographic consulting services, especially in assisting coastal, frontier road infrastructure and construction for all creeks, estuaries, rivers, and marine works. Our experts use the state of the art equipment and software to collect, process and interpret current velocities, tidal wave, water flux, ocean current, and met-ocean data. Coastal and marine hazard like erosion, siltation, and scouring, buried pipelines or other metallic debris, flooding assessment and storm surge monitoring are also part of our in-house expertise. Geoterrain can assist you in conducting numerous types of field studies, including habitat and sensitivity mapping, biological sampling and analysis for wetlands, creeks bays, harbours, pipeline surveys, near surface geological and hazard structures and open coastal environments; water quality sampling and analysis; mitigation planning and monitoring studies for wetlands, bays, harbours, and open coastal habitats; and technical report.",
+      image: "https://i.ibb.co/XxmDrTD9/image.png"
     },
     {
-      name: "Coastal Engineering Studies",
-      description: "Coastal stability assessments, erosion control solutions, and marine infrastructure design support. We provide engineering solutions for coastal protection and sustainable development.",
-      image: "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=400&h=300"
-    },
-    {
-      name: "Offshore Environmental Assessment",
-      description: "Marine environmental impact assessments for offshore oil and gas operations and renewable energy projects. Our assessments ensure minimal environmental impact and regulatory compliance.",
-      image: "https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=400&h=300"
+      name: "Environmental Assessments",
+      description: "Geoterrain is able to ensure the most efficient handling of quality meteorological and oceanography surveys, bathymetry, depth sounding and cartography. The data generated can be used as a pre-impact assessment of the area. Geoterrain has expertise for modelling the physical processes in coastal areas, estuaries, lakes, lagoon, et cetera. Geoterrain developed a range of models and can produce 2D and 3D models, flow and surge simulation models, sediment transport models, and contaminant dispersion models of oceanographic condition reduces uncertainty in engineering specifications, provides help in operational planning, leads to reduced costs, d enhances safety and operational efficiency.",
+      image: "https://i.ibb.co/HT0gv10N/image.png"
     }
-  ];
+  ];  
 
   const gallery = [
-    { title: "Marine Survey Vessel", image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=600" },
-    { title: "Underwater Equipment", image: "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=800&h=600" },
-    { title: "Coastal Monitoring", image: "https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800&h=600" },
-    { title: "Marine Sampling", image: "https://images.unsplash.com/photo-1436585556909-4a13b3c84caa?w=800&h=600" },
-    { title: "Offshore Platform", image: "https://images.unsplash.com/photo-1548094990-c16ca90f1f0d?w=800&h=600" },
-    { title: "Ocean Research", image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=600" }
+    { title: "ADCP Data Acquisition", image: "https://i.ibb.co/XxmDrTD9/image.png" },
+    { title: "Environmental Assessments", image: "https://i.ibb.co/HT0gv10N/image.png" }
   ];
 
   const nextImage = () => {
@@ -73,7 +64,7 @@ const OceanographyMarine = () => {
               Oceanography & Marine
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              Marine and Coastal Expertise
+              OCEANOGRAPHIC, COASTAL MANAGEMENT AND MARINE GEOLOGICAL STUD
             </p>
             <p className="text-lg text-muted-foreground">
               Specialized marine geological and oceanographic services including offshore surveys, coastal engineering, and marine environmental assessments.

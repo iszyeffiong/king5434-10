@@ -24,7 +24,7 @@ const AboutSection = () => {
             {/* Professional Image */}
             <div className="relative overflow-hidden rounded-lg shadow-lg">
               <img 
-                src={aboutImage} 
+                src="https://i.ibb.co/G33mdNNJ/unnamed-16.jpg" 
                 alt="GeoTerrain geological survey equipment and office environment"
                 className="w-full h-64 lg:h-80 object-cover hover-scale"
               />
