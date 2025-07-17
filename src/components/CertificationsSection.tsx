@@ -26,7 +26,7 @@ const CertificationsSection = () => {
           <div className="group animate-scale-in" style={{animationDelay: '0.2s'}}>
             <div className="bg-background p-8 rounded-2xl shadow-2xl transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-3xl">
               <img 
-                src={iso9001Badge} 
+                src={"https://i.ibb.co/39KMCgC1/Whats-App-Image-2025-07-17-at-12-31-59-fe4d5dd9.jpg "} 
                 alt="ISO 9001:2015 Certified" 
                 className="h-32 w-auto mx-auto mb-4"
               />
@@ -36,11 +36,11 @@ const CertificationsSection = () => {
               </div>
             </div>
           </div>
-
+          
           <div className="group animate-scale-in" style={{animationDelay: '0.4s'}}>
             <div className="bg-background p-8 rounded-2xl shadow-2xl transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-3xl">
               <img 
-                src={iso14001Badge} 
+                src={"https://i.ibb.co/Rkb35j3k/Whats-App-Image-2025-07-17-at-12-32-01-179bc75c.jpg"} 
                 alt="ISO 14001:2015 Certified" 
                 className="h-32 w-auto mx-auto mb-4"
               />
