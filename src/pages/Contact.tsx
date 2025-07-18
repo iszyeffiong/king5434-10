@@ -75,12 +75,12 @@ const Contact = () => {
       icon: MapPin,
       title: "Visit Us",
       details: ["1A Dele Adeyemi Street, Agungi East Estate", "Lekki, Lagos State, Nigeria"],
-      action: "https://maps.google.com"
+    
     },
     {
       icon: Clock,
       title: "Office Hours",
-      details: ["Monday - Friday: 8:00 AM - 6:00 PM", "Saturday - Sunday: Close"],
+      details: ["Monday - Friday: 8:00 AM - 5:00 PM", "Saturday: 10:00 AM - 2:00 PM "],
       action: null
     }
   ];
@@ -258,7 +258,7 @@ const Contact = () => {
                 <CardContent>
                   <div className="aspect-video rounded-lg overflow-hidden bg-muted mb-4">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.7657301814!2d3.4166493!3d6.4350825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b893b0fe6e60d%3A0x34ea9b1b7e7e1d7a!2sVictoria%20Island%2C%20Lagos%2C%20Nigeria!5e0!3m2!1sen!2sus!4v1647857832123!5m2!1sen!2sus"
+                      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d991.1632556565611!2d3.5172832!3d6.4385881!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf71685438a65%3A0xb2ffd9e6248ffdb!2sGeoterrain%20Nigeria%20Limited!5e0!3m2!1sen!2sng!4v1752859660580!5m2!1sen!2sng"
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}
@@ -282,14 +282,13 @@ const Contact = () => {
                         </p> <br />
                         <p className="font-medium">Port Harcourt Office</p>
                         <p className="text-sm text-muted-foreground">
-                          1A, Dele Adeyemi Street, Agungi East Estate<br />
-                          Lekki, Lagos State, <br />
-                          Nigeria
+                          Plot HC 50, Enugu Street, Rumuobiakani, <br />
+                          Port Harcourt, <br />Nigeria.
                         </p>
                       </div>
                     </div>
                     <Button variant="outline" className="w-full" asChild>
-                      <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer">
+                      <a href="https://maps.app.goo.gl/DChpWvsWK8FDLPndA" target="_blank" rel="noopener noreferrer">
                         <MapPin className="w-4 h-4 mr-2" />
                         Get Directions to Lagos Office
                       </a>

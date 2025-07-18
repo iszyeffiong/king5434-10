@@ -21,7 +21,22 @@ const AboutSection = () => {
               </button>
             </div>
 
-            {/* Professional Image */}
+             {/* Introduction */}
+            <div>
+              <h2 className="text-3xl font-bold text-foreground mb-6">Recognition</h2>
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+              It is of note that Geoterrain Nigeria Limited is a beneficiary of Nigerian Content Development and Monitoring Board (NCDMB) Project 100. The mandate seeks to develop next generation large scale Nigeria oil and gas service companies through structured capacity building and policy intervention.              </p>
+            </div>
+            <div>
+              <h2 className="text-3xl font-bold text-foreground mb-6">Certification</h2>
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                  <li>ISO 9001:2015 – Quality Management System </li>
+                  <li>ISO 14001:2015 – Environmental Management System</li>
+
+              </p>
+             <br />
+            </div>
+            {/* Professional Image 
             <div className="relative overflow-hidden rounded-lg shadow-lg">
               <img 
                 src="https://i.ibb.co/G33mdNNJ/unnamed-16.jpg" 
@@ -29,7 +44,7 @@ const AboutSection = () => {
                 className="w-full h-64 lg:h-80 object-cover hover-scale"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-            </div>
+            </div>*/}
           </div>
 
           {/* Right Column - Vision, Mission, Values */}
@@ -38,7 +53,7 @@ const AboutSection = () => {
             <div className="bg-card p-6 rounded-lg shadow-sm border animate-fade-in">
               <h3 className="text-xl font-bold text-primary mb-3">Our Vision</h3>
               <p className="text-muted-foreground">
-                At Geoterrain, our vision is to build and become a classic expert in providing geosciences, environmental, and oceanographic solutions to our customers and creating a robust portfolio through added value in training and consultancy.
+                To build and become a classic expertise in providing geosciences, environmental and oceanographic solutions to our customers and creating robust portfolio through added values in training and consultancy. 
               </p>
             </div>
 
@@ -49,8 +64,9 @@ const AboutSection = () => {
                 <p>• To provide our customers with improved decision tools that will assist them in accessing and evaluating their known and latent resources including hydrocarbon, mineral exploration and exploitation, and geospatial information in their portfolio.</p>
                 {showMore && (
                   <div className="animate-accordion-down">
-                    <p>• To pursue value creation, through the provision of applicable environmental, marine, and oceanographic solutions for our customers' needs.</p>
-                    <p>• Our services are customer-focused through enhancing our customers' business strength, limiting their exposure risks to its minimum level, and working closer with them.</p>
+                    <p> • To provide our customers with improved decision tools that will assist them in accessing and evaluating their known and latent resources including hydrocarbon, mineral exploration and exploitation in their portfolio. </p>
+                    <p> • To pursue value creation through the provision of applicable environmental, marine and oceanographic solutions to our customers’ needs. </p>
+                    <p> • Our services are customer-focused through enhancing our customers’ business strength, limiting their exposure risks to its minimum level, and working closer with them. </p> 
                   </div>
                 )}
               </div>

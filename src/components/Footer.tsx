@@ -49,14 +49,11 @@ const Footer = () => {
             
             <h4 className="font-bold mb-4">Connect With Us</h4>
             <a 
-              href="https://www.linkedin.com/company/geoterrain-nigeria-limited/mycompany/"
+              href="mailto:supportgroup@geoterrainltd.com"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-primary hover:text-primary-light transition-colors"
-            >
-              <Linkedin className="h-5 w-5" />
-              LinkedIn
-            </a>
+            >email Us </a>
           </div>
         </div>
 

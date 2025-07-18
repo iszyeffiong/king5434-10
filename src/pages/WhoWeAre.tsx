@@ -20,33 +20,57 @@ const WhoWeAre = () => {
       id: "about",
       title: "About Geoterrain",
       icon: Building2,
-      shortDescription: "Leading geological and environmental consulting firm in Nigeria, providing comprehensive earth science solutions with cutting-edge technology and expertise.",
+      shortDescription: "Geoterrain Nigeria Limited is among the leading consulting companies in Nigeria rendering consultancy services in the following areas, which meets the Nigerian Upstream Petroleum Regulatory Commission (NUPRC), Federal Ministry of Environment (FME) and NNPCL-NUIS-NipeX (formerly NNPC-NAPIMS-NIPEX) requirements: ",
       fullContent: {
         whyGeoterrain: [
-          "Proven track record of over 15 years in the industry",
-          "State-of-the-art equipment and advanced analytical capabilities",
-          "Highly qualified team of geologists, environmental scientists, and engineers",
-          "Commitment to sustainable and environmentally responsible practices",
-          "Local expertise with international standards",
-          "Cost-effective solutions tailored to client needs"
+          "Hydrocarbon Exploration and Production",
+          "Acreage Evaluation",
+          "Integrated Environmental Studies",
+          "Oil Spill Response and Remediation",
+          "Oceanography and Marine",
+          "Geospatial Information technology",
+          "New Ventures, Project and Asset Management",
+          "Training"
         ],
         licensedBy: [
-          "Department of Petroleum Resources (DPR) - Nigeria",
-          "Nigerian Mining Cadastre Office (MCO)",
-          "Federal Ministry of Environment",
-          "Nigerian Society of Engineers (NSE)"
+          "Federal Ministry of Environment (FME)",
+          "Nigerian Upstream Petroleum Regulatory Commission (NUPRC)",
+          "Nigerian Petroleum Exchange (NipeX)",
+          "NNPC Upstream Investment Services (NUIS), formally National Petroleum Investment Management Services, NAPIMS",
+          "Nigerian Content Development and Monitoring Board (NCDMB)",
+          "National Oil Spill Detection and Response Agency (NOSDRA), Nigeria",
+          "Rivers State Ministry of Environment (RSME)",
+          "Bureau of Public Procurement (BPP)", 
+          "Federal Inland Revenue Service (FIRS)",
+          "Industrial Training Fund (ITF)",
+          "Lagos State Internal Revenue Service (LIRS)",
+          "Rivers State Internal Revenue Services (RIRS)",
+          "National Pension Commission (PENCOM)",
+          "Nigeria Social Insurance Trust Fund (NSITF), et cetera"
         ],
         registeredWith: [
-          "Corporate Affairs Commission (CAC) - Nigeria",
-          "Nigerian Content Development and Monitoring Board (NCDMB)",
-          "Oil Producers Trade Section (OPTS)",
-          "International Association of Geophysical Contractors (IAGC)"
+           "Shell Petroleum Development Company Of Nigeria Limited (SPDC)", 
+          "Shell Nigeria Exploration and Production Company Limited (SNEPCo)",
+          "Addax Petroleum Exploration (Nigeria) Limited",
+          "Chevron Nigeria Limited (CNL)",
+          "ExxonMobil",
+          "Elf Petroleum Nigeria Limited (EPNL)",
+          "Nigerian Agip Oil Company (NAOC)",
+          "TotalEnergies - Total Nigeria Plc",
+          "First Exploration and Production Development Company Limited (First  E&P)",
+          "Nigerian National Petroleum Company Energy Services Limited (NNPC Enserve)",
+          "Nigeria Liquefied Natural Gas (NLNG)",
+          "Nigerian National Petroleum Company Limited (NNPCL)",
+          "Nigerian National Petroleum Company Exploration and Production Limited (NEPL)",
+          "NNPC Engineering & Technical Company Limited (NETCO)",
+          "Pan Ocean Oil Corporation (Nigeria) Limited",
+          "Platform Petroleum Limited",
+          "Enageed (Sahara Energy Resource Limited)",
+          "South Atlantic Petroleum (SAPETRO)",
+          "Seplat Energy"
         ],
         certifications: [
-          "ISO 9001:2015 - Quality Management System",
-          "ISO 14001:2015 - Environmental Management System",
-          "ISO 45001:2018 - Occupational Health and Safety Management",
-          "Nigerian Institute of Safety Professionals (NISP) Certification"
+          
         ]
       }
     },
@@ -57,22 +81,26 @@ const WhoWeAre = () => {
       shortDescription: "Strategic partnerships with leading indigenous and international companies driving our success and expanding our capabilities across Africa and beyond.",
       fullContent: {
         tagline: "Our Partners - Our Success",
-        description: "We believe in the power of collaboration. Our strategic partnerships enable us to deliver world-class solutions while maintaining our commitment to local content development and knowledge transfer.",
+        description: "Geoterrain Nigeria Limited seeks partnerships with both local and international reputable companies including local, well renowned Institutions. Some of which include:",
         indigenous: [
-          "Seplat Petroleum Development Company Plc",
-          "Nigerian National Petroleum Corporation (NNPC)",
-          "Oando Exploration & Production Limited",
-          "Aiteo Eastern E&P Company Limited",
-          "Lekoil Nigeria Limited",
-          "Platform Petroleum Limited"
+          "Jawura Environmental Services Limited (JESL)",
+          "Halden Nigeria Limited Laboratory",
+          "Ebic Integrated Services Limited Laboratory (EISL)",
+          "Global Energy Nigeria Limited",
+          "Laser Engineering Laboratory",
+          "Verity GeoSolution Nigeria Limited",
+          "NNPC Engineering & Technical Company Limited (NETCO)",
+          "UNILAG CONSULTS, University of Lagos, Nigeria"
         ],
+        
         international: [
-          "Schlumberger Limited",
-          "Halliburton Company",
-          "Baker Hughes",
-          "CGG Geophysics",
-          "Fugro N.V.",
-          "TotalEnergies SE"
+          "ALS Environmental Laboratories, Chester, UK.",
+          "i2 Environmental Laboratory, Watford, UK",
+          "Peak Processing, UK",
+          "Columbia Technologies, USA",
+          "Total Environmental Concept, Maryland, USA",
+          "Stratum Reservoir (formerly Weatherford Laboratories, Houston, USA).",
+          "Peiyang Chemical Equipment Co. (refer to PCC)"
         ]
       }
     },
@@ -91,7 +119,9 @@ const WhoWeAre = () => {
             "B.Sc. in Geology - University of Ibadan",
             "Professional Geologist (P.Geol) - Nigerian Association of Petroleum Explorationists"
           ],
-          experience: "Dr. Adeesida started his career with Shell Petroleum Development Company of Nigeria (SPDC) and served in different capacities as Head of - Geological Laboratory, Nigeria; Head - Northern Swamp Evaluation Team, Exploration, Nigeria. He retired. After retirement, he established Geoterrain Nigeria Limited (GtN). He is a fellow of the Nigerian Association of Petroleum Explorationists (NAPE), an honorary member of American Association of Petroleum Geologists (AAPG), active member of Nigerian Mining and Geosciences Society (NMGS) a member of Nigerian Association of Engineering Geology and Environment (NAEGE) and active member of Society of Exploration Geophysicists. He served as President, Africa Region of AAPG from 2003 - 2005 and Chairman, AAPG International from 2010 - 2014. He earned BSc, MSc and PhD in Geology and Applied Geology.; ",
+          experience: ["Dr. Adekunle ADESIDA is a qualified geologist, a proven environmentalist and oil finder with over 43 years’ industry experience in upstream and downstream management, technical and commercial roles. In addition, he currently sits as Director on the board of PNG Gas Limited and MOS Energy.",
+          "He started his career with Shell Petroleum Development Company of Nigeria (SPDC) and contributed to the Exploration and Production development in multifarious and diverse ways as Head - Geological Laboratory, Nigeria; Head - Northern Swamp Evaluation Team, Exploration, Nigeria; Head - Waste and Spills Management; and Business Manager – Commercial Crude and Gas Handling, Nigeria and served in different capacities across the globe (i.e. Nigeria, Netherland, Scotland, and Sultanate of Brunei, Southeast Asia) in his 28 years with SPDC.",
+          "He served as President, Africa Region of American Association of Petroleum Geologists (AAPG) from 2003 - 2005 and Chairman, AAPG International from 2010 - 2014. He is a Fellow of the Nigerian Association of Petroleum Explorationists (NAPE), Fellow of the Nigerian Association of Engineering Geology and Environment (NAEGE), an honorary member of AAPG, and active member of the Nigerian Mining and Geosciences Society (NMGS).",],
           achievements: [
             "Waste and Spills Management; and Business Manager",
             "Commercial Crude and Gas Handling, Nigeria",
@@ -100,23 +130,23 @@ const WhoWeAre = () => {
             "Spent about 29 years with Shell"
           ]
         },
-        management: [
-          // {
-          //   name: "Engr. Funmilayo Adeyemi",
-          //   title: "Head of Environmental Services",
-          //   qualification: "M.Eng. Environmental Engineering, 15 years experience"
-          // },
-          // {
-          //   name: "Dr. Chukwuma Okoro",
-          //   title: "Head of Geochemical Services", 
-          //   qualification: "Ph.D. Geochemistry, 12 years experience"
-          // },
-          // {
-          //   name: "Geol. Aisha Mahmud",
-          //   title: "Head of Marine & Oceanography",
-          //   qualification: "M.Sc. Marine Geology, 10 years experience"
-          // }
-        ]
+       management:  [
+          /*  {
+            name: "Engr. Funmilayo Adeyemi",
+            title: "Head of Environmental Services",
+            qualification: "M.Eng. Environmental Engineering, 15 years experience"
+          },
+          {
+            name: "Dr. Chukwuma Okoro",
+            title: "Head of Geochemical Services", 
+            qualification: "Ph.D. Geochemistry, 12 years experience"
+          },
+          {
+            name: "Geol. Aisha Mahmud",
+            title: "Head of Marine & Oceanography",
+            qualification: "M.Sc. Marine Geology, 10 years experience"
+          } */
+        ], 
       }
     }
   ];
@@ -204,7 +234,7 @@ const WhoWeAre = () => {
                           
                           <div className="space-y-6">
                             <div>
-                              <h4 className="font-semibold mb-3">Licensed By</h4>
+                              <h4 className="font-semibold mb-3">Geoterrain Nigeria Limited is fully licensed by:</h4>
                               <ul className="space-y-1">
                                 {section.fullContent.licensedBy.map((item, idx) => (
                                   <li key={idx} className="text-muted-foreground text-sm">• {item}</li>
@@ -213,22 +243,14 @@ const WhoWeAre = () => {
                             </div>
                             
                             <div>
-                              <h4 className="font-semibold mb-3">Registered With</h4>
+                              <h4 className="font-semibold mb-3">Geoterrain Nigeria Limited is fully registered with:</h4>
                               <ul className="space-y-1">
                                 {section.fullContent.registeredWith.map((item, idx) => (
                                   <li key={idx} className="text-muted-foreground text-sm">• {item}</li>
                                 ))}
                               </ul>
                             </div>
-                            
-                            <div>
-                              <h4 className="font-semibold mb-3">Our Certifications</h4>
-                              <ul className="space-y-1">
-                                {section.fullContent.certifications.map((item, idx) => (
-                                  <li key={idx} className="text-muted-foreground text-sm">• {item}</li>
-                                ))}
-                              </ul>
-                            </div>
+                          
                           </div>
                         </div>
                       )}
@@ -283,8 +305,10 @@ const WhoWeAre = () => {
                                 <div className="flex-1">
                                   <h3 className="text-2xl font-bold mb-1">{section.fullContent.ceo.name}</h3>
                                   <p className="text-primary font-semibold mb-4">{section.fullContent.ceo.title}</p>
-                                  <p className="text-muted-foreground mb-4">{section.fullContent.ceo.experience}</p>
-                                  
+                                        {section.fullContent.ceo.experience.map((paragraph: string, idx: number) => (
+                                          <p key={idx} className="text-muted-foreground mb-4">{paragraph}</p>
+                                        ))}
+                                                                          
                                   <div className="grid md:grid-cols-2 gap-6">
                                     <div>
                                       <h4 className="font-semibold mb-3">Qualifications</h4>

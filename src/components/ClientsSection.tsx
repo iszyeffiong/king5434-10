@@ -3,7 +3,9 @@ const ClientsSection = () => {
     { name: "", logo: "https://i.ibb.co/gL567tyy/image.png " },
     { name: "", logo: "https://i.ibb.co/qGJcYK3/unnamed-18.jpg" },
     { name: "", logo: "https://i.ibb.co/cK8KQ4ds/unnamed-21.jpg" },
+    { name: "", logo: "https://i.ibb.co/QFM4cfkh/download.jpg" },
     { name: "", logo: "https://i.ibb.co/2YMmPyrr/unnamed-23.jpg" },
+    { name: "", logo: "https://i.ibb.co/mVVDwXVX/image.png" },
     { name: "", logo: "https://i.ibb.co/DfzSDWG1/unnamed-24.jpg" },
     { name: "", logo: "https://i.ibb.co/SX33fHKS/unnamed-7.png" }
   ];

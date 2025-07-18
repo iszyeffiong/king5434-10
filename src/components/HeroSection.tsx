@@ -57,15 +57,15 @@ const HeroSection = () => {
           {/* Stats Section */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-20 animate-fade-in-up" style={{animationDelay: '0.8s'}}>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">ISO</div>
-              <div className="text-white/80 text-sm uppercase tracking-wider">Certified</div>
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2">1.2m+</div>
+              <div className="text-white/80 text-sm uppercase tracking-wider">MAN-HOURS WITHOUT LTI</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-white mb-2">15+</div>
               <div className="text-white/80 text-sm uppercase tracking-wider">Years Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">100+</div>
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2">332+</div>
               <div className="text-white/80 text-sm uppercase tracking-wider">Projects Completed</div>
             </div>
           </div>
