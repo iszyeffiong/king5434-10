@@ -94,12 +94,12 @@ const ServicesSection = () => {
                     ))}
                   </div>
 
-                  <button className="mt-6 text-primary font-semibold hover:text-primary-dark transition-colors duration-200 flex items-center group/btn">
+                  {/* <button className="mt-6 text-primary font-semibold hover:text-primary-dark transition-colors duration-200 flex items-center group/btn">
                     Learn More
                     <svg className="w-4 h-4 ml-2 transition-transform group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                  </button>
+                  </button> */}
                 </div>
               </div>
             );
