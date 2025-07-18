@@ -44,15 +44,14 @@ const HeroSection = () => {
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-6 animate-fade-in-up" style={{animationDelay: '0.6s'}}>
-            <button className="group bg-primary hover:bg-primary-dark text-primary-foreground px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center">
-              Explore Our Services
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </button>
-            <button className="group border-2 border-white/80 text-white hover:bg-white hover:text-primary px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm flex items-center justify-center">
-              <Play className="mr-2 h-5 w-5" />
-              Watch Our Story
-            </button>
+          <div className="flex flex-col sm:flex-row gap-6 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+            <a href="/services">
+                <button className="group bg-primary hover:bg-primary-dark text-primary-foreground px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center">
+                  Explore Our Services
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </button>
+              </a>
+            
           </div>
 
           {/* Stats Section */}

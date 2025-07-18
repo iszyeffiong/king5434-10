@@ -4,7 +4,7 @@ const ServicesSection = () => {
   const services = [
     {
       icon: Layers,
-      title: "Geology & Geophysics",
+      title: "Geolo gy & Geophysics",
       description: "Comprehensive geological and geophysical consulting services including seismic interpretation, structural geology, and reservoir characterization.",
       features: ["Seismic Analysis", "Structural Mapping", "Rock Physics"]
     },
@@ -113,9 +113,11 @@ const ServicesSection = () => {
             <p className="text-white/90 mb-6 max-w-2xl mx-auto">
               Get in touch with our experts to discuss how we can help with your geosciences and environmental needs.
             </p>
-            <button className="bg-white text-primary hover:bg-gray-100 px-8 py-3 rounded-full font-semibold transition-colors">
-              Contact Our Experts
-            </button>
+            <a href="/contact">
+              <button className="bg-white text-primary hover:bg-gray-100 px-8 py-3 rounded-full font-semibold transition-colors">
+                Contact Our Experts
+              </button>
+            </a>
           </div>
         </div>
       </div>
