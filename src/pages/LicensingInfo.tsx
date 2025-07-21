@@ -149,6 +149,40 @@ const LicensingInfo = () => {
               </CardContent>
             </Card>
           </div>
+          
+          <div className="grid lg:grid-cols-2 gap-8 mt-8">
+            <Card className="h-fit">
+              <CardHeader>
+                <CardTitle className="text-xl">Geoterrain Nigeria Limited is fully licensed by:</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3">
+                  {licensedBy.map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                      <span className="text-muted-foreground text-sm">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+            
+            <Card className="h-fit">
+              <CardHeader>
+                <CardTitle className="text-xl">Geoterrain Nigeria Limited is fully registered with:</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3">
+                  {registeredWith.map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                      <span className="text-muted-foreground text-sm">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
       
