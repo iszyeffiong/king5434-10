@@ -116,7 +116,7 @@ const LicensingInfo = () => {
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-3 gap-8">
             <Card className="h-fit">
               <CardHeader>
                 <CardTitle className="text-xl">Geoterrain Nigeria Limited is fully licensed by:</CardTitle>
@@ -148,6 +148,15 @@ const LicensingInfo = () => {
                 </ul>
               </CardContent>
             </Card>
+            
+            {/* Desktop-only image */}
+            <div className="hidden lg:flex lg:items-center lg:justify-center">
+              <img 
+                src="/src/assets/hero-landscape.jpg" 
+                alt="Geoterrain credentials" 
+                className="w-full h-auto rounded-lg shadow-lg object-cover max-h-96"
+              />
+            </div>
           </div>
           
           <div className="grid lg:grid-cols-2 gap-8 mt-8">
