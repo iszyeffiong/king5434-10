@@ -24,20 +24,19 @@ const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-4 py-20">
         <div className="max-w-4xl">
           <div className="animate-fade-in-up">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
-              Excellence in 
+            <p className="text-2xl md:text-6xl lg:text-4xl font-bold text-white mb-8 leading-tight">
+              Excellence in Geosciences, Environmental, Oceanography, Project and 
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-earth-gold to-white"> 
-                Geosciences
+                Asset Management Solutions
               </span>
-            </h1>
+            </p>
           </div>
           
           <div className="animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-            <p className="text-xl md:text-2xl lg:text-3xl text-white/90 mb-4 font-light">
+            <p className="text-lg md:text-xl text-white/80 mb-12 max-w-2xl">
               We are committed to excellence in job execution and maintain high international ethical standards
             </p>
           </div>
-
           <div className="animate-fade-in-up" style={{animationDelay: '0.4s'}}>
             <p className="text-lg md:text-xl text-white/80 mb-12 max-w-2xl">
               Leading consulting company in Nigeria rendering geosciences, environmental, and oceanographic solutions that meet NUPRC and NNPCL standards.

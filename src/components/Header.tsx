@@ -46,6 +46,7 @@ const Header = () => {
   return (
     <header className="bg-background/80 backdrop-blur-md border-b border-border/50 sticky top-0 z-50 transition-all duration-300">
       <div className="container mx-auto px-4 lg:px-6">
+        {/* Header main flex container */}
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
@@ -56,6 +57,20 @@ const Header = () => {
                 className="h-14 w-auto transition-transform hover:scale-105"
               />
             </Link>
+          </div>
+
+          {/* Centered Two Images — NEW */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <img 
+              src="https://i.ibb.co/PZ87GhrJ/1-rview.png" 
+              alt="Middle Image 1" 
+              className="h-20 w-auto object-contain"
+            />
+            <img 
+              src="https://i.ibb.co/rRPSWZcc/2-rew.png" 
+              alt="Middle Image 2" 
+              className="h-20 w-auto object-contain"
+            />
           </div>
 
           {/* Desktop Navigation */}

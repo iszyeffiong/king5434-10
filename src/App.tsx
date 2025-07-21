@@ -16,6 +16,7 @@ import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Career from "./pages/Career";
 import NotFound from "./pages/NotFound";
+import LicensingInfo from "./pages/LicensingInfo";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
         <Route path="/services" element={<Services />} />
         <Route path="/services/geological-services" element={<GeologicalServices />} />
         <Route path="/services/environmental-services" element={<EnvironmentalServices />} />
+        <Route path="/licensing-info" element={<LicensingInfo />} />
         <Route path="/services/oceanography-marine" element={<OceanographyMarine />} />
         <Route path="/services/geochemical-services" element={<GeochemicalServices />} />
         <Route path="/services/new-ventures-asset-mgt" element={<NewVenturesAssetMgt />} />

@@ -26,9 +26,9 @@
         <div className="group animate-scale-in" style={{animationDelay: '0.2s'}}>
           <div className="bg-background p-8 rounded-2xl shadow-2xl transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-3xl">
             <img 
-              src={"https://i.ibb.co/39KMCgC1/Whats-App-Image-2025-07-17-at-12-31-59-fe4d5dd9.jpg "} 
+              src={"https://i.ibb.co/PZ87GhrJ/1-rview.png "} 
               alt="ISO 9001:2015 Certified" 
-              className="h-20 w-auto mx-auto mb-4"
+              className="h-20 w-50 mx-auto mb-4"
             />
             <div className="text-center">
               <h3 className="text-xl font-bold text-foreground mb-2">ISO 9001:2015</h3>
@@ -40,9 +40,9 @@
         <div className="group animate-scale-in" style={{animationDelay: '0.4s'}}>
           <div className="bg-background p-8 rounded-2xl shadow-2xl transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-3xl">
             <img 
-              src={"https://i.ibb.co/Rkb35j3k/Whats-App-Image-2025-07-17-at-12-32-01-179bc75c.jpg"} 
+              src={"https://i.ibb.co/rRPSWZcc/2-rew.png"} 
               alt="ISO 14001:2015 Certified" 
-              className="h-20 w-auto mx-auto mb-4"
+              className="h-20 w-50 mx-auto mb-4"
             />
             <div className="text-center">
               <h3 className="text-xl font-bold text-foreground mb-2">ISO 14001:2015</h3>

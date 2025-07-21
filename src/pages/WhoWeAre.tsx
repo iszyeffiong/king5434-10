@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 const WhoWeAre = () => {
   const [expandedSections, setExpandedSections] = useState<{ [key: string]: boolean }>({});
@@ -49,7 +50,7 @@ const WhoWeAre = () => {
           "Nigeria Social Insurance Trust Fund (NSITF), et cetera"
         ],
         registeredWith: [
-           "Shell Petroleum Development Company Of Nigeria Limited (SPDC)", 
+          "Shell Petroleum Development Company Of Nigeria Limited (SPDC)", 
           "Shell Nigeria Exploration and Production Company Limited (SNEPCo)",
           "Addax Petroleum Exploration (Nigeria) Limited",
           "Chevron Nigeria Limited (CNL)",
@@ -243,12 +244,11 @@ const WhoWeAre = () => {
                             </div>
                             
                             <div>
-                              <h4 className="font-semibold mb-3">Geoterrain Nigeria Limited is fully registered with:</h4>
-                              <ul className="space-y-1">
-                                {section.fullContent.registeredWith.map((item, idx) => (
-                                  <li key={idx} className="text-muted-foreground text-sm">• {item}</li>
-                                ))}
-                              </ul>
+                             <Link to="/licensing-info">
+                                <Button variant="outline" size="sm" className="mt-3">
+                                  Read More
+                                </Button>
+                              </Link>
                             </div>
                           
                           </div>
