@@ -6,43 +6,58 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const LicensingInfo = () => {
+  const whyChooseUs = [
+    "Proven track record of over 15 years in the industry",
+    "Highly qualified team of geoscientists, environmental scientists, engineers, economists and other associated disciplines",
+    "State-of-the-art equipment and advanced analytical capabilities",
+    "Commitment to sustainable and environmentally responsible practices",
+    "Local expertise with international standards",
+    "Cost-effective solutions tailored to client needs"
+  ];
+
   const licensedBy = [
-    "Federal Ministry of Environment (FME)",
+    "Corporate Affairs Commission (CAC) - Nigeria",
     "Nigerian Upstream Petroleum Regulatory Commission (NUPRC)",
+    "Federal Ministry of Environment (FME)",
     "Nigerian Petroleum Exchange (NipeX)",
     "NNPC Upstream Investment Services (NUIS), formally National Petroleum Investment Management Services, NAPIMS",
-    "Nigerian Content Development and Monitoring Board (NCDMB)",
     "National Oil Spill Detection and Response Agency (NOSDRA), Nigeria",
+    "Nigerian Content Development and Monitoring Board (NCDMB)",
     "Rivers State Ministry of Environment (RSME)",
-    "Bureau of Public Procurement (BPP)", 
+    "Bureau of Public Procurement (BPP)",
     "Federal Inland Revenue Service (FIRS)",
     "Industrial Training Fund (ITF)",
     "Lagos State Internal Revenue Service (LIRS)",
     "Rivers State Internal Revenue Services (RIRS)",
     "National Pension Commission (PENCOM)",
-    "Nigeria Social Insurance Trust Fund (NSITF), et cetera"
+    "Nigeria Social Insurance Trust Fund (NSITF), et cetera",
+    "Nigerian Society of Engineers (NSE)"
   ];
 
   const registeredWith = [
-    "Shell Petroleum Development Company Of Nigeria Limited (SPDC)", 
-    "Shell Nigeria Exploration and Production Company Limited (SNEPCo)",
-    "Addax Petroleum Exploration (Nigeria) Limited",
-    "Chevron Nigeria Limited (CNL)",
-    "ExxonMobil",
-    "Elf Petroleum Nigeria Limited (EPNL)",
-    "Nigerian Agip Oil Company (NAOC)",
-    "TotalEnergies - Total Nigeria Plc",
-    "First Exploration and Production Development Company Limited (First  E&P)",
-    "Nigerian National Petroleum Company Energy Services Limited (NNPC Enserve)",
-    "Nigeria Liquefied Natural Gas (NLNG)",
     "Nigerian National Petroleum Company Limited (NNPCL)",
-    "Nigerian National Petroleum Company Exploration and Production Limited (NEPL)",
-    "NNPC Engineering & Technical Company Limited (NETCO)",
-    "Pan Ocean Oil Corporation (Nigeria) Limited",
+    "NNPC Exploration & Petroleum Limited (NEPL)",
+    "Federal Ministry of Environment - Hydrocarbon Pollution Remediation Project (HYPREP)",
+    "Shell Nigerian Exploration and Production Company (SNEPCO)",
+    "Chevron Nigeria Limited (CNL)",
+    "Shell Petroleum Development Company of Nigeria Limited (SPDC, now Renaissance Africa Energy Company Ltd)",
+    "Total Energies Nigeria",
+    "Nigerian Agip Exploration (NAE)",
+    "EXXONMOBIL Nigeria / Mobil Producing Nigeria Unlimited (MPNU)",
+    "ADDAX, (former Operator of OML 123, 124, 126 & 137)",
+    "Renaissance Africa Energy Company Ltd (formerly SPDC)",
+    "FIRST Exploration and Petroleum Development Company Ltd",
+    "Enageed Resources Limited /Sahara Group",
     "Platform Petroleum Limited",
-    "Enageed (Sahara Energy Resource Limited)",
     "South Atlantic Petroleum (SAPETRO)",
-    "Seplat Energy"
+    "Nigeria Liquefied Natural Gas (NLNG)",
+    "Antan Producing Limited (APL), New Operator of OML 123, 124, 126 & 137",
+    "Oando Plc (New Operator of Nigerian Agip Oil Company (NAOC) Ltd Assets",
+    "WalterSmith Petroman Oil Limited",
+    "Ammi International Petroleum Development Company Limited",
+    "Heirs Energies Limited",
+    "Seplat Energy, new operator of MPNU OML 67,68,70 & 104, Qua Iboe Export Terminal, Yoho FSO, Bonny River Terminal (BRT) NGL recovery plant",
+    "Nigerian Gas Association (NGA)"
   ];
 
   return (
@@ -67,36 +82,67 @@ const LicensingInfo = () => {
         </div>
       </section>
 
-      {/* Content Section */}
+      {/* Why Choose Us Section */}
+      <section className="py-16 bg-gradient-to-br from-primary/5 to-background">
+        <div className="container mx-auto px-4 lg:px-6">
+          <Card className="max-w-4xl mx-auto">
+            <CardHeader className="text-center">
+              <CardTitle className="text-2xl lg:text-3xl mb-4">Why Choose Geoterrain</CardTitle>
+              <p className="text-muted-foreground">Discover what sets us apart in the industry</p>
+            </CardHeader>
+            <CardContent>
+              <ul className="grid md:grid-cols-2 gap-4">
+                {whyChooseUs.map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                    <span className="text-muted-foreground">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Licensing & Registration Section */}
       <section className="py-16">
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Our Credentials
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Fully licensed and registered with leading organizations and regulatory bodies
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-8">
+            <Card className="h-fit">
               <CardHeader>
-                <CardTitle>Geoterrain Nigeria Limited is fully licensed by:</CardTitle>
+                <CardTitle className="text-xl">Fully Licensed By</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
                   {licensedBy.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2">
                       <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                      <span className="text-muted-foreground">{item}</span>
+                      <span className="text-muted-foreground text-sm">{item}</span>
                     </li>
                   ))}
                 </ul>
               </CardContent>
             </Card>
             
-            <Card>
+            <Card className="h-fit">
               <CardHeader>
-                <CardTitle>Geoterrain Nigeria Limited is fully registered with:</CardTitle>
+                <CardTitle className="text-xl">Registered With</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
                   {registeredWith.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2">
                       <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                      <span className="text-muted-foreground">{item}</span>
+                      <span className="text-muted-foreground text-sm">{item}</span>
                     </li>
                   ))}
                 </ul>
