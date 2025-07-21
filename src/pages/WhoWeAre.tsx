@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp, Users, Award, Building2, Shield } from "lucide-react";
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -236,19 +237,15 @@ const WhoWeAre = () => {
                             <div>
                               <h4 className="font-semibold mb-3">Geoterrain Nigeria Limited is fully licensed by:</h4>
                               <ul className="space-y-1">
-                                {section.fullContent.licensedBy.map((item, idx) => (
+                                {section.fullContent.licensedBy.slice(0, 3).map((item, idx) => (
                                   <li key={idx} className="text-muted-foreground text-sm">• {item}</li>
                                 ))}
                               </ul>
-                            </div>
-                            
-                            <div>
-                              <h4 className="font-semibold mb-3">Geoterrain Nigeria Limited is fully registered with:</h4>
-                              <ul className="space-y-1">
-                                {section.fullContent.registeredWith.map((item, idx) => (
-                                  <li key={idx} className="text-muted-foreground text-sm">• {item}</li>
-                                ))}
-                              </ul>
+                              <Link to="/licensing-info">
+                                <Button variant="outline" size="sm" className="mt-3">
+                                  Read More
+                                </Button>
+                              </Link>
                             </div>
                           
                           </div>
