@@ -17,7 +17,7 @@ import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Career from "./pages/Career";
 import NotFound from "./pages/NotFound";
-import LicensingInfo from "./pages/LicensingInfo";
+
 
 const queryClient = new QueryClient();
 
