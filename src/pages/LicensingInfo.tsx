@@ -119,7 +119,7 @@ const LicensingInfo = () => {
           <div className="grid lg:grid-cols-2 gap-8">
             <Card className="h-fit">
               <CardHeader>
-                <CardTitle className="text-xl">Fully Licensed By</CardTitle>
+                <CardTitle className="text-xl">Geoterrain Nigeria Limited is fully licensed by:</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
@@ -135,7 +135,7 @@ const LicensingInfo = () => {
             
             <Card className="h-fit">
               <CardHeader>
-                <CardTitle className="text-xl">Registered With</CardTitle>
+                <CardTitle className="text-xl">Geoterrain Nigeria Limited is fully registered with:</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
