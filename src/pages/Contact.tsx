@@ -9,236 +9,79 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/lib/supabase";
 
 const Contact = () => {
   const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    company: "",
+@@ -20,8 +21,9 @@
     service: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Basic validation
-    if (!formData.name || !formData.email || !formData.message) {
-      toast({
-        title: "Missing Information",
-        description: "Please fill in all required fields.",
-        variant: "destructive"
-      });
+@@ -34,21 +36,52 @@
       return;
     }
 
-    // Simulate form submission
-    toast({
-      title: "Message Sent Successfully!",
-      description: "We'll get back to you within 24 hours.",
-    });
+    setIsSubmitting(true);
+    try {
+      // Insert the contact message into Supabase
+      const { error } = await supabase
+        .from('contact_messages')
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone || null,
+            company: formData.company || null,
+            service: formData.service || null,
+            message: formData.message
+          }
+        ]);
 
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      service: "",
-      message: ""
-    });
+      if (error) {
+        throw error;
+      }
+
+      toast({
+        title: "Message Sent Successfully!",
+        description: "We'll get back to you within 24 hours.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        service: "",
+        message: ""
+      });
+
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({
-      ...prev,
-      [field]: value
-    }));
-  };
-
-  const contactInfo = [
-    {
-      icon: Mail,
-      title: "Email Us",
-      details: ["supportgroup@geoterrainltd.com",],
-      action: "mailto:supportgroup@geoterrainltd.com"
-    },
-    {
-      icon: Phone,
-      title: "Call Us",
-      details: ["+234-8175250107", ],
-      action: "tel:+2348175250107"
-    },
-    {
-      icon: MapPin,
-      title: "Visit Us",
-      details: ["1A Dele Adeyemi Street, Agungi East Estate", "Lekki, Lagos State, Nigeria"],
-    
-    },
-    {
-      icon: Clock,
-      title: "Office Hours",
-      details: ["Monday - Friday: 8:00 AM - 5:00 PM", "Saturday: 10:00 AM - 2:00 PM "],
-      action: null
-    }
-  ];
-
-  const services = [
-    "Geological Services",
-    "Environmental Services", 
-    "Oceanography & Marine",
-    "Geochemical Services",
-    "New Ventures & Asset Management",
-    "Other"
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary/10 via-background to-primary/5 py-20">
-        <div className="container mx-auto px-4 lg:px-6">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
-              Contact Us
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8">
-              Get in touch with our team of experts. We're here to help with your geological and environmental needs.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Information */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 lg:px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {contactInfo.map((info, index) => {
-              const Icon = info.icon;
-              return (
-                <Card key={index} className="text-center hover:shadow-md transition-shadow">
-                  <CardHeader className="pb-4">
-                    <div className="w-12 h-12 mx-auto bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                      <Icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <CardTitle className="text-lg">{info.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    {info.details.map((detail, idx) => (
-                      <p key={idx} className="text-muted-foreground text-sm mb-1">
-                        {detail}
-                      </p>
-                    ))}
-                    {info.action && (
-                      <a
-                        href={info.action}
-                        className="inline-block mt-3 text-primary hover:underline text-sm font-medium"
-                      >
-                        {info.icon === Mail ? "Send Email" : 
-                         info.icon === Phone ? "Call Now" : "Get Directions"}
-                      </a>
-                    )}
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-
-          {/* Contact Form and Map */}
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <div>
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-2xl">Send Us a Message</CardTitle>
-                  <CardDescription>
-                    Fill out the form below and we'll get back to you as soon as possible.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <Label htmlFor="name">Full Name *</Label>
-                        <Input
-                          id="name"
-                          type="text"
-                          value={formData.name}
-                          onChange={(e) => handleInputChange("name", e.target.value)}
-                          placeholder="Enter your full name"
-                          required
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="email">Email Address *</Label>
-                        <Input
-                          id="email"
-                          type="email"
-                          value={formData.email}
-                          onChange={(e) => handleInputChange("email", e.target.value)}
-                          placeholder="Enter your email"
-                          required
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <Label htmlFor="phone">Phone Number</Label>
-                        <Input
-                          id="phone"
-                          type="tel"
-                          value={formData.phone}
-                          onChange={(e) => handleInputChange("phone", e.target.value)}
-                          placeholder="Enter your phone number"
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="company">Company/Organization</Label>
-                        <Input
-                          id="company"
-                          type="text"
-                          value={formData.company}
-                          onChange={(e) => handleInputChange("company", e.target.value)}
-                          placeholder="Enter your company name"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="service">Service of Interest</Label>
-                      <Select onValueChange={(value) => handleInputChange("service", value)}>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select a service" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          {services.map((service) => (
-                            <SelectItem key={service} value={service}>
-                              {service}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="message">Message *</Label>
-                      <Textarea
-                        id="message"
-                        value={formData.message}
-                        onChange={(e) => handleInputChange("message", e.target.value)}
-                        placeholder="Tell us about your project or inquiry..."
-                        className="min-h-[120px]"
-                        required
+@@ -236,76 +269,76 @@
                       />
                     </div>
 
-                    <Button type="submit" className="w-full">
+                    <Button type="submit" className="w-full" disabled={isSubmitting}>
                       <Send className="w-4 h-4 mr-2" />
-                      Send Message
+                      {isSubmitting ? "Sending..." : "Send Message"}
                     </Button>
                   </form>
                 </CardContent>
@@ -298,12 +141,12 @@ const Contact = () => {
               </Card>
 
               {/* Additional Office Information */}
-             
+
             </div>
           </div>
         </div>
       </section>
-      
+
       <Footer />
     </div>
   );
