@@ -10,6 +10,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/lib/supabase";
+
 
 const Career = () => {
   const { toast } = useToast();
@@ -28,6 +30,9 @@ const Career = () => {
     resume: null as File | null,
     portfolio: [] as File[]
   });
+
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
