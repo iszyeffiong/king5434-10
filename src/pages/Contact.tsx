@@ -10,6 +10,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -18,7 +19,9 @@ const Contact = () => {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const handleSubmit = async (e: React.FormEvent) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -52,6 +55,26 @@ const Contact = () => {
         description: "We'll get back to you within 24 hours.",
       });
 
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        service: "",
+        message: ""
+      });
+
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
       // Reset form
       setFormData({
         name: "",
