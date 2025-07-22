@@ -24,7 +24,9 @@ const Career = () => {
     location: "",
     salary: "",
     coverLetter: "",
-    terms: false
+    terms: false,
+    resume: null as File | null,
+    portfolio: [] as File[]
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -55,7 +57,9 @@ const Career = () => {
       location: "",
       salary: "",
       coverLetter: "",
-      terms: false
+      terms: false,
+      resume: null,
+      portfolio: []
     });
   };
 
@@ -64,6 +68,35 @@ const Career = () => {
       ...prev,
       [field]: value
     }));
+  };
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>, type: 'resume' | 'portfolio') => {
+    const files = event.target.files;
+    if (!files) return;
+
+    if (type === 'resume') {
+      const file = files[0];
+      if (file && file.size <= 5 * 1024 * 1024) { // 5MB limit
+        setFormData(prev => ({ ...prev, resume: file }));
+        toast({
+          title: "Resume uploaded successfully!",
+          description: `File: ${file.name}`,
+        });
+      } else {
+        toast({
+          title: "File too large",
+          description: "Resume must be under 5MB",
+          variant: "destructive"
+        });
+      }
+    } else {
+      const fileArray = Array.from(files);
+      setFormData(prev => ({ ...prev, portfolio: fileArray }));
+      toast({
+        title: "Portfolio files uploaded!",
+        description: `${fileArray.length} file(s) selected`,
+      });
+    }
   };
 
   const benefits = [
@@ -321,9 +354,26 @@ const Career = () => {
                         <p className="text-sm text-muted-foreground mb-2">
                           Upload your resume/CV (PDF, DOC, DOCX - Max 5MB)
                         </p>
-                        <Button variant="outline" size="sm">
+                        <input
+                          type="file"
+                          id="resume-upload"
+                          accept=".pdf,.doc,.docx"
+                          onChange={(e) => handleFileChange(e, 'resume')}
+                          className="hidden"
+                        />
+                        <Button 
+                          variant="outline" 
+                          size="sm" 
+                          type="button"
+                          onClick={() => document.getElementById('resume-upload')?.click()}
+                        >
                           Choose File
                         </Button>
+                        {formData.resume && (
+                          <p className="text-sm text-green-600 mt-2">
+                            ✓ {formData.resume.name}
+                          </p>
+                        )}
                       </div>
                       
                       <div className="border-2 border-dashed border-muted rounded-lg p-6 text-center">
@@ -331,9 +381,27 @@ const Career = () => {
                         <p className="text-sm text-muted-foreground mb-2">
                           Upload portfolio/certificates (Optional)
                         </p>
-                        <Button variant="outline" size="sm">
+                        <input
+                          type="file"
+                          id="portfolio-upload"
+                          accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+                          multiple
+                          onChange={(e) => handleFileChange(e, 'portfolio')}
+                          className="hidden"
+                        />
+                        <Button 
+                          variant="outline" 
+                          size="sm" 
+                          type="button"
+                          onClick={() => document.getElementById('portfolio-upload')?.click()}
+                        >
                           Choose Files
                         </Button>
+                        {formData.portfolio.length > 0 && (
+                          <p className="text-sm text-green-600 mt-2">
+                            ✓ {formData.portfolio.length} file(s) selected
+                          </p>
+                        )}
                       </div>
                     </div>
                   </div>
