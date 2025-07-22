@@ -1,14 +1,3 @@
-import { useState } from "react";
-import { Upload, Send, Users, Award, TrendingUp, Heart } from "lucide-react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/lib/supabase";
 
@@ -16,18 +5,8 @@ import { supabase } from "@/lib/supabase";
 const Career = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    position: "",
-    experience: "",
-    education: "",
-    location: "",
-    salary: "",
-    coverLetter: "",
-    terms: false,
-    resume: null as File | null,
+
+@@ -31,12 +30,33 @@ const Career = () => {
     portfolio: [] as File[]
   });
 
@@ -35,14 +14,35 @@ const Career = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     e.preventDefault();
     
     if (!formData.firstName || !formData.lastName || !formData.email || !formData.position || !formData.coverLetter || !formData.terms) {
       toast({
         title: "Missing Information",
-        description: "Please fill in all required fields and accept the terms.",
-        variant: "destructive"
-      });
+
+@@ -46,439 +66,84 @@ const Career = () => {
       return;
     }
 
@@ -79,6 +79,9 @@ const Career = () => {
     const files = event.target.files;
     if (!files) return;
 
+
+
+
     if (type === 'resume') {
       const file = files[0];
       if (file && file.size <= 5 * 1024 * 1024) { // 5MB limit
@@ -93,6 +96,12 @@ const Career = () => {
           description: "Resume must be under 5MB",
           variant: "destructive"
         });
+
+
+
+
+
+
       }
     } else {
       const fileArray = Array.from(files);
@@ -124,6 +133,10 @@ const Career = () => {
       icon: Heart,
       title: "Work-Life Balance",
       description: "Flexible working arrangements, annual leave, and employee wellness programs."
+
+
+
+
     }
   ];
 
