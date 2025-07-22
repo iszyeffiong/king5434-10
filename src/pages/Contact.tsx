@@ -3,90 +3,86 @@ import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue
+} from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/lib/supabase";
 import { supabase } from "@/lib/supabase";
 
 const Contact = () => {
   const { toast } = useToast();
-@@ -20,8 +21,9 @@
-    service: "",
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    service: undefined as string | undefined,
     message: ""
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleInputChange = (field: string, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Basic validation
-@@ -34,21 +36,52 @@
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({
+        title: "Missing Required Fields",
+        description: "Please fill out your name, email, and message.",
+        variant: "destructive"
+      });
       return;
     }
 
     setIsSubmitting(true);
     try {
-      // Insert the contact message into Supabase
-      const { error } = await supabase
-        .from('contact_messages')
-        .insert([
-          {
-            name: formData.name,
-            email: formData.email,
-            phone: formData.phone || null,
-            company: formData.company || null,
-            service: formData.service || null,
-            message: formData.message
-          }
-        ]);
+      const { error } = await supabase.from("contact_messages").insert([
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || null,
+          company: formData.company || null,
+          service: formData.service || null,
+          message: formData.message
+        }
+      ]);
 
-      if (error) {
-        throw error;
-      }
+      if (error) throw error;
 
       toast({
         title: "Message Sent Successfully!",
-        description: "We'll get back to you within 24 hours.",
+        description: "We'll get back to you within 24 hours."
       });
 
-      // Reset form
       setFormData({
         name: "",
         email: "",
         phone: "",
         company: "",
-        service: "",
+        service: undefined,
         message: ""
       });
-
     } catch (error) {
-      console.error('Error submitting form:', error);
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again.",
-        variant: "destructive"
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        service: "",
-        message: ""
-      });
-
-    } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error("Error submitting form:", error);
       toast({
         title: "Error",
         description: "Failed to send message. Please try again.",
@@ -97,11 +93,84 @@ const Contact = () => {
     }
   };
 
-  const handleInputChange = (field: string, value: string) => {
-@@ -236,76 +269,76 @@
+  return (
+    <div>
+      <Header />
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <div>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Contact Us</CardTitle>
+                  <CardDescription>
+                    Have a question or project in mind? Fill the form and we'll get back to you!
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div>
+                      <Label htmlFor="name">Name *</Label>
+                      <Input
+                        id="name"
+                        value={formData.name}
+                        onChange={(e) => handleInputChange("name", e.target.value)}
+                        required
                       />
                     </div>
-
+                    <div>
+                      <Label htmlFor="email">Email *</Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={(e) => handleInputChange("email", e.target.value)}
+                        required
+                      />
+                    </div>
+                    <div>
+                      <Label htmlFor="phone">Phone</Label>
+                      <Input
+                        id="phone"
+                        value={formData.phone}
+                        onChange={(e) => handleInputChange("phone", e.target.value)}
+                      />
+                    </div>
+                    <div>
+                      <Label htmlFor="company">Company</Label>
+                      <Input
+                        id="company"
+                        value={formData.company}
+                        onChange={(e) => handleInputChange("company", e.target.value)}
+                      />
+                    </div>
+                    <div>
+                      <Label htmlFor="service">Service</Label>
+                      <Select
+                        value={formData.service}
+                        onValueChange={(value) => handleInputChange("service", value)}
+                      >
+                        <SelectTrigger id="service">
+                          <SelectValue placeholder="Select a service" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="surveying">Surveying</SelectItem>
+                          <SelectItem value="mapping">Mapping</SelectItem>
+                          <SelectItem value="gis">GIS</SelectItem>
+                          <SelectItem value="remote-sensing">Remote Sensing</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    <div>
+                      <Label htmlFor="message">Message *</Label>
+                      <Textarea
+                        id="message"
+                        rows={5}
+                        value={formData.message}
+                        onChange={(e) => handleInputChange("message", e.target.value)}
+                        required
+                      />
+                    </div>
                     <Button type="submit" className="w-full" disabled={isSubmitting}>
                       <Send className="w-4 h-4 mr-2" />
                       {isSubmitting ? "Sending..." : "Send Message"}
@@ -111,9 +180,7 @@ const Contact = () => {
               </Card>
             </div>
 
-            {/* Map and Office Info */}
             <div className="space-y-6">
-              {/* Google Maps Placeholder */}
               <Card>
                 <CardHeader>
                   <CardTitle>Find Our Headquarters</CardTitle>
@@ -132,7 +199,7 @@ const Contact = () => {
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
                       title="GeoTerrain Nigeria Office Location"
-                    />
+                    ></iframe>
                   </div>
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">
@@ -142,19 +209,29 @@ const Contact = () => {
                         <br />
                         <p className="font-medium">Lagos Office</p>
                         <p className="text-sm text-muted-foreground">
-                          1A, Dele Adeyemi Street, Agungi East Estate<br />
-                          Lekki, Lagos State, <br />
+                          1A, Dele Adeyemi Street, Agungi East Estate
+                          <br />
+                          Lekki, Lagos State,
+                          <br />
                           Nigeria
-                        </p> <br />
+                        </p>
+                        <br />
                         <p className="font-medium">Port Harcourt Office</p>
                         <p className="text-sm text-muted-foreground">
-                          Plot HC 50, Enugu Street, Rumuobiakani, <br />
-                          Port Harcourt, <br />Nigeria.
+                          Plot HC 50, Enugu Street, Rumuobiakani,
+                          <br />
+                          Port Harcourt,
+                          <br />
+                          Nigeria.
                         </p>
                       </div>
                     </div>
                     <Button variant="outline" className="w-full" asChild>
-                      <a href="https://maps.app.goo.gl/DChpWvsWK8FDLPndA" target="_blank" rel="noopener noreferrer">
+                      <a
+                        href="https://maps.app.goo.gl/DChpWvsWK8FDLPndA"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <MapPin className="w-4 h-4 mr-2" />
                         Get Directions to Lagos Office
                       </a>
@@ -162,14 +239,10 @@ const Contact = () => {
                   </div>
                 </CardContent>
               </Card>
-
-              {/* Additional Office Information */}
-
             </div>
           </div>
         </div>
       </section>
-
       <Footer />
     </div>
   );
