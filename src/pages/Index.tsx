@@ -7,6 +7,7 @@ import ServicesSection from "@/components/ServicesSection";
 import ClientsSection from "@/components/ClientsSection";
 import Footer from "@/components/Footer";
 
+
 const Index = () => {
   return (
     <div className="min-h-screen">

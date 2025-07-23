@@ -300,7 +300,7 @@ const WhoWeAre = () => {
                               <div className="flex items-start gap-6">
                                 <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
                                   <span className="text-2xl font-bold text-primary">
-                                    {section.fullContent.ceo.name.split(' ').map(n => n[0]).join('')}
+                                    {section.fullContent.ceo.name.split(' ').slice(0, 2).map(n => n[0]).join('')}
                                   </span>
                                 </div>
                                 <div className="flex-1">
