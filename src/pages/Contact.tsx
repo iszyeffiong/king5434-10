@@ -9,6 +9,8 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/lib/supabase";
+
 
 const Contact = () => {
   const { toast } = useToast();
@@ -21,20 +23,63 @@ const Contact = () => {
     message: ""
   });
 
-    e.preventDefault();
-    
-    // Basic validation
-    if (!formData.name || !formData.email || !formData.message) {
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  // Basic validation
+  if (!formData.name || !formData.email || !formData.message) {
+    toast({
+      title: "Missing Information",
+      description: "Please fill in all required fields.",
+      variant: "destructive"
+    });
+    return;
+  }
+
+  try {
+    const { error } = await supabase
+      .from("contact_submissions")
+      .insert([{
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone || null,
+        company: formData.company || null,
+        service: formData.service || null,
+        message: formData.message,
+        // status will default to "new", so we don't need to include it
+      }]);
+
+    if (error) {
       toast({
-        title: "Missing Information",
-        description: "Please fill in all required fields.",
+        title: "Submission Failed",
+        description: error.message || "An error occurred while submitting the form.",
         variant: "destructive"
       });
-      return;
+    } else {
+      toast({
+        title: "Message Sent Successfully!",
+        description: "We'll get back to you within 24 hours.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        service: "",
+        message: ""
+      });
     }
+  } catch (err: any) {
+    toast({
+      title: "Unexpected Error",
+      description: err.message || "Something went wrong.",
+      variant: "destructive"
+    });
+  }
+};
 
-
-  };
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({

@@ -10,6 +10,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/lib/supabase";  
 
 
 const Career = () => {
@@ -27,21 +28,81 @@ const Career = () => {
     coverLetter: "",
     terms: false,
     resume: null as File | null,
-    portfolio: [] as File[]
+    portfolio: [] as File[],
+    portfolioUrls: [] as string[]
   });
 
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-    e.preventDefault();
-    
-    if (!formData.firstName || !formData.lastName || !formData.email || !formData.position || !formData.coverLetter || !formData.terms) {
-      toast({
-        title: "Missing Information",
-        description: "Please fill in all required fields and accept the terms.",
-        variant: "destructive"
-      });
-      return;
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  // Basic validation
+  if (
+    !formData.firstName ||
+    !formData.lastName ||
+    !formData.email ||
+    !formData.position ||
+    !formData.coverLetter ||
+    !formData.terms
+  ) {
+    toast({
+      title: "Missing Information",
+      description: "Please fill in all required fields and accept the terms.",
+      variant: "destructive"
+    });
+    setIsSubmitting(false);
+    return;
+  }
+
+  try {
+    let resumeUrl = null;
+
+    // Upload resume if provided
+    if (formData.resume) {
+      const fileExt = formData.resume.name.split('.').pop();
+      const fileName = `${formData.email}-${Date.now()}.${fileExt}`;
+      const { data: uploadData, error: uploadError } = await supabase.storage
+        .from("resumes")
+        .upload(fileName, formData.resume);
+
+      if (uploadError) {
+        throw new Error("Resume upload failed: " + uploadError.message);
+      }
+
+      const { data: publicUrl } = supabase.storage
+        .from("resumes")
+        .getPublicUrl(uploadData.path);
+
+      resumeUrl = publicUrl.publicUrl;
+    }
+
+    // Insert form data into Supabase table
+ const { error: insertError } = await supabase.from("career_applications").insert([
+  {
+    first_name: formData.firstName,
+    last_name: formData.lastName,
+    email: formData.email,
+    phone: formData.phone || null,
+    position: formData.position,
+    experience_level: formData.experience || null,
+    education_level: formData.education || null,
+    location: formData.location || null,
+    expected_salary: formData.salary || null,
+    resume_url: resumeUrl,
+    portfolio_urls: formData.portfolioUrls || [],
+    cover_letter: formData.coverLetter,
+    terms_accepted: formData.terms,
+    status: "pending",
+    message: null
+  }
+]);
+
+
+    if (insertError) {
+      throw new Error("Failed to submit application: " + insertError.message);
     }
 
     toast({
@@ -49,6 +110,7 @@ const Career = () => {
       description: "We'll review your application and get back to you soon.",
     });
 
+    // Reset form
     setFormData({
       firstName: "",
       lastName: "",
@@ -64,7 +126,18 @@ const Career = () => {
       resume: null,
       portfolio: []
     });
-  };
+
+  } catch (err: any) {
+    toast({
+      title: "Submission Failed",
+      description: err.message || "Something went wrong. Please try again.",
+      variant: "destructive"
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
 
   const handleInputChange = (field: string, value: string | boolean) => {
     setFormData(prev => ({
@@ -72,8 +145,8 @@ const Career = () => {
       [field]: value
     }));
   };
-
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>, type: 'resume' | 'portfolio') => {
+    
+  const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>, type: 'resume' | 'portfolio') => {
     const files = event.target.files;
     if (!files) return;
 
@@ -93,13 +166,36 @@ const Career = () => {
         });
       }
     } else {
-      const fileArray = Array.from(files);
-      setFormData(prev => ({ ...prev, portfolio: fileArray }));
-      toast({
-        title: "Portfolio files uploaded!",
-        description: `${fileArray.length} file(s) selected`,
-      });
+  const uploadedFiles: File[] = Array.from(files);
+  const urls: string[] = [];
+
+  for (const file of uploadedFiles) {
+    const ext = file.name.split(".").pop();
+    const fileName = `${formData.email}-portfolio-${Date.now()}-${file.name}`;
+    const { data, error } = await supabase.storage
+      .from("resumes")
+      .upload(fileName, file);
+
+    if (!error && data) {
+      const { data: publicUrl } = supabase.storage
+        .from("resumes")
+        .getPublicUrl(data.path);
+      urls.push(publicUrl.publicUrl);
     }
+  }
+
+  setFormData(prev => ({
+    ...prev,
+    portfolio: uploadedFiles,
+    portfolioUrls: urls
+  }));
+
+  toast({
+    title: "Portfolio files uploaded!",
+    description: `${urls.length} file(s) uploaded successfully`,
+  });
+}
+
   };
 
   const benefits = [
