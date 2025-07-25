@@ -102,41 +102,40 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
         </div>
 
         {/* Management Policy Modal */}
-        {open && (
-          <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4">
-            <div className="bg-white rounded-xl shadow-xl w-full max-w-4xl max-h-[90vh] overflow-y-auto p-6 relative">
-              <button
-                onClick={() => setOpen(false)}
-                className="absolute top-3 right-3 text-gray-400 hover:text-red-500"
-              >
-                <X className="w-6 h-6" />
-              </button>
+       {open && (
+  <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4">
+    <div className="bg-white rounded-xl shadow-xl w-full max-w-4xl max-h-[90vh] overflow-hidden relative">
+      <button
+        onClick={() => setOpen(false)}
+        className="absolute top-3 right-3 text-gray-400 hover:text-red-500 z-10"
+      >
+        <X className="w-6 h-6" />
+      </button>
 
-              <h2 className="text-lg font-semibold mb-4">Management Policy Preview</h2>
+      <h2 className="text-lg font-semibold p-4 border-b">Management Policy Preview</h2>
 
-              <div className="border rounded mb-4">
-                <Document
-                  file="/pdfs/management-policy.pdf"
-                  onLoadSuccess={handleLoadSuccess}
-                >
-                  {Array.from(new Array(numPages), (_, i) => (
-                    <Page key={i + 1} pageNumber={i + 1} width={700} />
-                  ))}
-                </Document>
-              </div>
+      {/* PDF in iframe */}
+      <iframe
+        src="/pdfs/Management-Policy.pdf"
+        title="Management Policy PDF"
+        className="w-full h-[70vh] border-none"
+      />
 
-              <div className="flex justify-end">
-                <a
-                  href="public/pdfs/management-policy.pdf"
-                  download
-                  className="bg-primary text-white px-4 py-2 rounded hover:bg-primary-dark"
-                >
-                  Download PDF
-                </a>
-              </div>
-            </div>
-          </div>
-        )}
+      <div className="flex justify-end p-4 border-t">
+        <a
+          href="/pdfs/Management-Policy.pdf"
+          download
+          className="bg-primary text-white px-4 py-2 rounded hover:bg-primary-dark"
+        >
+          Download PDF
+        </a>
+      </div>
+    </div>
+  </div>
+)}
+
+
+
       </section>
     );
   };
